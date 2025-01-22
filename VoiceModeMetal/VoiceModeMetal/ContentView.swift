@@ -17,17 +17,6 @@ struct ContentView: View {
                 Circle()
                     .frame(width:300,height:300)
             )
-
-        Image("sample")
-            .resizable()
-            .scaledToFill()
-            .frame(width:330,height:320)
-            .blur(radius:10)
-            .layerEffect(ShaderLibrary.fractalNoiseBlueWhite(.boundingRect, .float(progress),.float(2.0)), maxSampleOffset:.zero)
-            .mask(
-                Circle()
-                    .frame(width:300,height:300)
-            )
             .onAppear {
                 withAnimation(.linear(duration: 30).repeatForever(autoreverses: true)){
                     progress = 6
